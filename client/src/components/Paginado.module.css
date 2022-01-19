@@ -1,0 +1,15 @@
+.paginado{
+    background-color: rgb(61, 6, 83);
+    outline-color: rgb(253, 231, 33);
+    color:white;
+    border-radius: 5px;
+    border-width:1.5px;
+    margin: 2px;
+    margin-bottom: 20px;
+    padding:8px;
+    font-family:monospace; 
+}
+
+.paginado:hover{
+    background-color: rgb(72, 38, 85);
+    }

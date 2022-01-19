@@ -1,0 +1,34 @@
+.Searchinput{
+    background-color: white;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-width: 0px;
+    border-color: black;
+    width: 400px;
+    padding:22px;
+    /* font-family:monospace; */
+    color: black;
+    margin-bottom: 20px;
+}
+
+.SearchBarDiv{
+    margin-top: 100px;
+    padding:20px;
+
+}
+
+.Searchbutton{
+    background-color: rgb(61, 6, 83);
+    outline-color: rgb(253, 231, 33);
+    color:white;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-width:thin;
+    /* margin-left: 3px; */
+    padding:21px;
+    /* font-family:monospace;  */
+}
+
+.Searchbutton:hover{
+    background-color: rgb(72, 38, 85);
+}
