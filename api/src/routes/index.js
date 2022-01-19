@@ -16,7 +16,7 @@ const getCountriesInfo = async () => {
     const countryData = apiUrl.data.map(el => {
         return{
             id: el.cca3,
-            name:el.name.official,
+            name:el.name.common,
             img:el.flags[1],
             continent: el.continents[0],
             capital: el.capital? el.capital[0]: "This Capital doesn't exist",
@@ -56,9 +56,12 @@ router.get('/countries', async (req,res) => {
     const dbInfo = await getCountriesInfo();
     let infoRutaPrincipal = dbInfo.map(el => {
         return {
+            id: el.id,
             name: el.name,
             img: el.img,
-            continent: el.continent
+            continent: el.continent,
+            population: el.population,
+            activities:el.activities
         }
     })
     if(name){

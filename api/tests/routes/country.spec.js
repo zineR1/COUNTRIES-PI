@@ -17,8 +17,16 @@ describe('Country routes', () => {
   beforeEach(() => Country.sync({ force: true })
     .then(() => Country.create(pokemon)));
   describe('GET /countries', () => {
+    
     it('should get 200', () =>
       agent.get('/countries').expect(200)
     );
+  });
+
+  it('POST agrega una nueva actividad a través de la ruta /activity y recibe un status 200', function() {
+    return supertest
+      .post('/activity')
+      .expect(200)
+      .expect('Content-Type', /json/)
   });
 });
