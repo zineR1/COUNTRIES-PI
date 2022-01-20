@@ -94,11 +94,7 @@ return(
         </a>
         </div>
         <div className={style.header}>
-        {/* <button className={style.botonheader} onClick={e => {handleClick(e)}}>
-            Refresh Countries
-        </button> */}
         <br/>
-        {/* <h1>Find your dream place</h1> */}
         <SearchBar/>
         <div className={style.filters}>
             <select className={style.botonfilter} onClick={e => {handleSort(e)}}>

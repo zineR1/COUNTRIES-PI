@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import { getDetails } from "../actions";
 import { useEffect } from "react";
+import style from "./Detail.module.css"
 
 export default function Detail(props){
       const dispatch = useDispatch();
@@ -14,10 +15,11 @@ export default function Detail(props){
       const myCountry = useSelector((state) => state.details)
 
       return(
-          <div>
-              {
-                myCountry.length > 0 ?
-                <div >
+        <div className={style.detailgral}>
+        <div className={style.container}>
+           <div className={style.detailinfo}>
+              {myCountry.length > 0 ?
+                <div>
                     <h1>{myCountry[0].name}</h1>
                     <img src={myCountry[0].img} alt="img"  width='250px' height='250px'/>
                     <h4>Continent: {myCountry[0].continent}</h4>
@@ -25,7 +27,6 @@ export default function Detail(props){
                     <h4>Subregion: {myCountry[0].subregion}</h4>
                     <h4>Area: {myCountry[0].area}</h4>
                     <h4>Population: {myCountry[0].population}</h4>
-                    <div>
                         {myCountry[0].activities.length?
                         <h4>Activities:</h4> 
                     : <h4>There isn't activities available</h4>}
@@ -36,12 +37,14 @@ export default function Detail(props){
                 })
                     }
                     </div>
-                    </div> : <p>Loading...</p>
+                     : <p>Loading...</p>
               }
               <br/>
               <Link to="/home">
-                  <button>Back</button>
+                  <button className={style.back}>Back</button>
               </Link>
           </div>
+          </div>
+            </div>
       )
 }

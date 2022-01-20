@@ -1,0 +1,66 @@
+.background{
+    background-image: url(../deportes-de-invierno-esquí-IV.jpg);
+    background-repeat: no-repeat; 
+    background-size: cover;
+    height: 800px;
+    padding-top: 20px;
+}
+
+.input{
+    background-color: white;
+    border-radius: 30px;
+    border-width: 1px;
+    border-color: black;
+    width: 400px;
+    padding:10px;
+    /* font-family:monospace; */
+    color: black;
+    margin-bottom: 20px;
+}
+
+.btnSubmit{
+    background-color: rgb(61, 6, 83);
+    color:white;
+    border-radius: 5px;
+    border-width: thin;
+    margin: 20px;
+    padding:8px;
+    width: 380px;
+    margin-top: 50px;
+}
+
+.btnSubmit:hover{
+    background-color: rgb(72, 38, 85);
+    }
+    
+.btnSelect{
+    background-color: white;
+    border-radius: 30px;
+    border-width: 1px;
+    border-color: black;
+    width: 420px;
+    padding:10px;
+    /* font-family:monospace; */
+    color: black;
+    /* margin-bottom: 20px; */
+    }
+    
+.btnSelect:hover{
+    background-color: rgb(220, 218, 221);
+    }
+
+.back{
+    background-color: rgb(61, 6, 83);
+    color:white;
+    border-radius: 5px;
+    border-width: thin;
+    margin: 20px;
+    padding:8px;
+    width: 100px;
+    margin-top: 100px;
+}
+
+.back:hover{
+    background-color: rgb(72, 38, 85);
+
+}

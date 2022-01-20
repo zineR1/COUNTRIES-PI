@@ -9,8 +9,8 @@
     -ms-grid-column-align: center;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    background-color: rgb(222, 209, 231);
-    /* background-image: url(../e5937f6be65c37bc8d7bb5f85ca928ab.jpg); */
+    /* background-color: rgb(222, 209, 231); */
+    background-image: url(../fondoHome.png);
     background-repeat: no-repeat; 
     background-size: cover;
     height: 1300px;
@@ -112,8 +112,8 @@
 }
 
 .paginado{
-    background-color: rgb(222, 209, 231);
-    height: 100px;
+    background-color: rgb(61, 6, 83);
+    height: 140px;
 }
 
 /* .title{

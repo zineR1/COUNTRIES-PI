@@ -2,6 +2,8 @@ import React, {useState,useEffect} from "react";
 import {Link, useHistory} from "react-router-dom";
 import { getCountries, postActivity } from '../actions/';
 import {useDispatch, useSelector} from "react-redux";
+import style from "./ActivityCreated.module.css"
+import logo from '../tripper.png'
 
 export default function ActivityCreate(){
 const dispatch = useDispatch();
@@ -105,16 +107,16 @@ function handleDelete(e){
     }
 
 return(
-    <div>
+    <div className={style.background}>
         <h1>Create Your Favourite Activity</h1>
+        <br/>
         <form onSubmit={e => handleSubmit (e)}>
             <div>
-                <label>Name: </label>
-                <input
+                <input className={style.input}
                 type="text"
                 value= {input.name}
                 name="name"
-                placeholder="Golf"
+                placeholder="Activity Name"
                 onChange={e => handleChange(e)}
                 />
                 {errors.name && (
@@ -123,12 +125,11 @@ return(
             </div>
             <br/>
             <div>
-                <label>Difficulty : </label>
-                <input
+                <input className={style.input}
                 type="number"
                 value= {input.difficulty}
                 name="difficulty"
-                placeholder="2"
+                placeholder="Difficulty"
                 onChange={e => handleChange(e)}
                 />
                 {errors.difficulty && (
@@ -137,17 +138,25 @@ return(
             </div>
             <br/>
             <div>
-                <label>Duration : </label>
-                <input
+                <input className={style.input}
                 type="text"
                 value= {input.duration}
                 name="duration"
-                placeholder="Two Months"
+                placeholder="Duration"
                 onChange={e => handleChange(e)}
                 />
                 {errors.duration && (
                     <p>{errors.duration}</p>
                 )}
+            </div>
+            <br/>
+            <div>
+            <select className={style.btnSelect} onChange={e => handleSelect(e)}>
+                <option>Countries</option>
+                {countrie.map((el) => (
+                     <option key={el.id} value={el.name}>{el.name}</option>  
+                ))}
+            </select>
             </div>
             <br/>
             <div>                
@@ -181,24 +190,16 @@ return(
                 )}
             </div>
             <br/>
-            <div>
-            <select onChange={e => handleSelect(e)}>
-                <option>Countries:</option>
-                {countrie.map((el) => (
-                     <option key={el.id} value={el.name}>{el.name}</option>  
-                ))}
-            </select>
-            </div>
-            <br/>
-            <button type='submit'>Create Activity</button>
+            <button className={style.btnSubmit} type='submit'>Create Activity</button>
         </form>
         <div>
             <p>{input.countries}</p>
             <button key={countrie.id} onClick={ () => handleDelete(input.countries)}>x</button>
         </div>
-        
+        <Link to="/home">
+           <button className={style.back}>Back</button>
+        </Link>
         <br/>
-        <Link to="/home"><button>Back</button></Link>
     </div>
 )
 
