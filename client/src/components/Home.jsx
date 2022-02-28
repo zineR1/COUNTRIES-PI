@@ -32,15 +32,15 @@ const continentSort = continentOrder.sort(function(a,b){
 const [,setOrden] = useState('')
 const [,setOrden2] = useState('')
 const [currentPage, setCurrentPage] = useState(1) // PÁGINA INICIAL
-const [firstPage] = useState(9)
-const [countriesPerPage] = useState(10)
+// const [firstPage] = useState(12)
+const [countriesPerPage] = useState(12)
 
 const indexOfLastCountry = currentPage * countriesPerPage //12
 const indexOfFirstCountry = indexOfLastCountry - countriesPerPage //0
-const indexOfLastCountry1 = currentPage * firstPage
-const indexOfFirstCountry1 = indexOfLastCountry1 - firstPage
+// const indexOfLastCountry1 = currentPage * firstPage
+// const indexOfFirstCountry1 = indexOfLastCountry1 - firstPage
 const currentCountries = allCountries.slice(indexOfFirstCountry, indexOfLastCountry) 
-const currentCountries1 = allCountries.slice(indexOfFirstCountry1, indexOfLastCountry1) 
+// const currentCountries1 = allCountries.slice(indexOfFirstCountry1, indexOfLastCountry1) 
 
 
     const paginado =  (pageNumber) => {
@@ -129,18 +129,12 @@ return(
             </div>
             </div>
             <div className={style.grid}>
-            {currentPage === 1? currentCountries1.map(c => {
+            {currentCountries.map(c => {
                 return(
                <Link className={style.btnName} to={"/details/" + c.id}  key={c.id}>
                 <Card className={style.grid} name={c.name} img={c.img} continent={c.continent} key={c.id}/>
                 </Link>
              )
-            }): currentCountries.map(c => {
-                return(
-                    <Link to ={"/details/" + c.id}  key={c.id}>
-                        <Card name={c.name} img={c.img} continent={c.continent} key={c.id}/>
-                    </Link>
-                )
             })
             }
         </div>

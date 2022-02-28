@@ -25,7 +25,8 @@ function rootReducer(state = initialState, action){
                 return -1
             }
             return 0
-        }):
+        })
+        :action.payload === 'desc'?
         state.countries.sort(function(a,b){
             if(a.name > b.name){
                 return -1
@@ -34,7 +35,7 @@ function rootReducer(state = initialState, action){
                 return 1
             }
             return 0
-        })
+        }): state.countries
         return {
             ...state,
             countries: sortedArr
@@ -50,7 +51,7 @@ function rootReducer(state = initialState, action){
                 return  1
             }
             return 0
-        }):
+        }): action.payload === 'less'?
         state.countries.sort(function(a,b){
             if(a.population > b.population){
                 return 1
@@ -59,7 +60,7 @@ function rootReducer(state = initialState, action){
                 return -1
             }
             return 0
-        })
+        }): state.countries
         return {
             ...state,
             countries: sortedArr2
@@ -102,6 +103,7 @@ function rootReducer(state = initialState, action){
             ...state,
             details: action.payload
         }
+
     default:
         return state;
 }
