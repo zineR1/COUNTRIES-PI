@@ -16,7 +16,7 @@ const [input, setInput] = useState({
     difficulty: "",
     duration: "",
     season: "",
-    countries: ""
+    countries: []
 })
 console.log(input.name)
 
@@ -78,10 +78,10 @@ function handleCheck(e){
 
 function handleSubmit(e){
     e.preventDefault();
-    // if(!input.name || !input.difficulty || !input.duration || !input.season || !input.countries){
-    //     alert('You must fill all the inputs')
-    // }
-    // else{
+    if(!input.name || !input.difficulty || !input.duration || !input.season || !input.countries){
+        alert('You must fill all the inputs')
+    }
+    else{
     dispatch(postActivity(input))
     alert('Activity Created')
     setInput({
@@ -91,6 +91,7 @@ function handleSubmit(e){
         season: "",
         countries: []
     })
+    }
     setErrors(validate({
         ...input,
         [e.target.value] : e.target.value
@@ -192,15 +193,17 @@ return(
             <br/>
             <button className={style.btnSubmit} type='submit'>Create Activity</button>
         </form>
-        <div>
-            <p>{input.countries}</p>
-            <button key={countrie.id} onClick={ () => handleDelete(input.countries)}>x</button>
+         {input.countries.map(el =>
+            <div key={el}>
+            <p key={el}>{el}</p>
+            <button key={countrie.id} onClick={ () => handleDelete(el)}>x</button>
         </div>
+         )}
         <Link to="/home">
            <button className={style.back}>Back</button>
         </Link>
-        <br/>
     </div>
+    
 )
 
 }
