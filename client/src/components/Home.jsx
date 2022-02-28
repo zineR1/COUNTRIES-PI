@@ -82,6 +82,7 @@ function handleFilterContinent(e){
 }
     
 return(
+    <div className={style.main1}>
     <div className={style.Background}>
          <div className={style.LogoDiv}>
              <div>
@@ -151,6 +152,7 @@ return(
            />
            </div>
            <br/>
+    </div>
     </div>
 )
 }

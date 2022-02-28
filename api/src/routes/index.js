@@ -25,6 +25,10 @@ const getCountriesInfo = async () => {
             population: el.population
         }
     })
+    const allcountries = await Country.findAll({
+        include: Activity
+    });
+    if(!allcountries[0]){
     countryData.forEach(el => {
                  Country.findOrCreate({
                      where: {
@@ -39,10 +43,10 @@ const getCountriesInfo = async () => {
                             }
                       })
             })
+        }
         const allcount = await Country.findAll({
             include: Activity
         });
-        // const allCountAct = await allcounthnjfhmfhmfhmfhmf
         return allcount
     }
     catch(error){

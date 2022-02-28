@@ -3,7 +3,8 @@ import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import { getDetails } from "../actions";
 import { useEffect } from "react";
-import style from "./Detail.module.css"
+import style from "./Detail.module.css";
+import Loader from "./Loader";
 
 export default function Detail(props){
       const dispatch = useDispatch();
@@ -15,6 +16,7 @@ export default function Detail(props){
       const myCountry = useSelector((state) => state.details)
 
       return(
+            <div className={style.main1}>
         <div className={style.detailgral}>
         <div className={style.container}>
            <div className={style.detailinfo}>
@@ -37,7 +39,7 @@ export default function Detail(props){
                 })
                     }
                     </div>
-                     : <p>Loading...</p>
+                     : <Loader/>
               }
               <br/>
               <Link to="/home">
@@ -45,6 +47,7 @@ export default function Detail(props){
               </Link>
           </div>
           </div>
+            </div>
             </div>
       )
 }
